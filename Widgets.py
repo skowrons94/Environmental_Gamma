@@ -12,8 +12,8 @@ def create_widgets( run ):
                                description='Massimo:',
                                style=style)
                    
-    name  = widgets.Select(options=['GePadova','SetupC','Surface'],
-                           value='GePadova',
+    name  = widgets.Select(options=['LNGS senza schermatura','LNGS con schermatura di Pb','Superficie senza scheramtura'],
+                           value='LNGS senza schermatura',
                            description='Spettri:',
                            disabled=False)
     scale = widgets.Select(options=['Lineare','Logaritmica'],

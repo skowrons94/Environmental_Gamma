@@ -3,9 +3,9 @@ import numpy as np
 class Histogram:
     def __init__( self ):
         self.data = { }
-        self.read_histo( "GePadova" )
-        self.read_histo( "Surface"  )
-        self.read_xy(    "SetupC"   )
+        self.read_histo( "lngs_unshielded"    )
+        self.read_histo( "surface_unshielded" )
+        self.read_xy(    "lngs_shielded"      )
 
     
     def read_histo( self, name ):

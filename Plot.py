@@ -34,11 +34,12 @@ def create_background( data, intMin, intMax ):
         line.append( [data[idxMin+idx][0],back])
     line = np.asarray( line )
     plt.plot( line[:,0], line[:,1], color='tab:red' )
-    counts = 0
+    integral = 0
     for idx in range( idxMin, idxMax ):
-        counts += data[idx][1]
-    counts -= (m*data[idxMin][0] + q + m*data[idxMax][0] + q)*(data[idxMin][0] - data[idxMax][0])/2
-    return counts
+        integral += data[idx][1]
+    back = (m*data[idxMin][0] + q + m*data[idxMax][0] + q)*(data[idxMax][0] - data[idxMin][0])/2
+    counts = integral - back
+    return counts, integral
 
 def create_roi( data, intMin, intMax ):
     idxMin = np.abs(data[:,0] - intMin).argmin()
